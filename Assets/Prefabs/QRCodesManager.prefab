@@ -64,3 +64,4 @@ MonoBehaviour:
   QR60mm: {fileID: 1200717071578424, guid: 622edec2b97c91645a7056c7fcdb6336, type: 3}
   QRFootObj: {fileID: 8123198562495455727, guid: 34e7174ad30e0a34eaac773ee0b1b666, type: 3}
   QRArmObj: {fileID: 4638916986957716036, guid: 1c208256b80b7274a8d062a800677d5a, type: 3}
+  QRFeetObj: {fileID: 8123198562495455727, guid: 628c0c377424f3c48a7745e2647fb62a, type: 3}

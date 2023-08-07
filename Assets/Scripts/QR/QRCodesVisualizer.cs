@@ -15,6 +15,7 @@ namespace QRTracking
 
         public GameObject QRFootObj;
         public GameObject QRArmObj;
+        public GameObject QRFeetObj;
 
         private SortedDictionary<System.Guid, GameObject> qrCodesObjectsList;
         private Queue<ActionData> pendingActions = new Queue<ActionData>();
@@ -105,6 +106,13 @@ namespace QRTracking
                                 qrArm.GetComponent<SpatialGraphNodeTracker>().Id = action.qrCode.SpatialGraphNodeId;
                                 qrArm.GetComponent<QRObject>().qrCode = action.qrCode;
                                 qrCodesObjectsList.Add(action.qrCode.Id, qrArm);
+                                QRInfo.text += $"Added={action.qrCode.Data}\r\n";
+                                break;
+                            case "101003":
+                                GameObject qrFeet = Instantiate(QRFeetObj, new Vector3(0, 0, 0), Quaternion.identity);
+                                qrFeet.GetComponent<SpatialGraphNodeTracker>().Id = action.qrCode.SpatialGraphNodeId;
+                                qrFeet.GetComponent<QRObject>().qrCode = action.qrCode;
+                                qrCodesObjectsList.Add(action.qrCode.Id, qrFeet);
                                 QRInfo.text += $"Added={action.qrCode.Data}\r\n";
                                 break;
                             default:
