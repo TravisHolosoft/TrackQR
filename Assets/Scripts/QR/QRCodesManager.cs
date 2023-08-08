@@ -85,6 +85,8 @@ namespace QRTracking
             capabilityTask = QRCodeWatcher.RequestAccessAsync();
             accessStatus = await capabilityTask;
             capabilityInitialized = true;
+
+            Debug.Log($"IsSupported {IsSupported}");
         }
 
         private void SetupQRTracking()
@@ -108,6 +110,8 @@ namespace QRTracking
             {
                 StartQRTracking();
             }
+
+            Debug.Log($"---- SetupQRTracking ----");
         }
 
         public void StartQRTracking()
@@ -125,6 +129,8 @@ namespace QRTracking
                     Debug.Log("QRCodesManager starting QRCodeWatcher Exception:" + ex.ToString());
                 }
             }
+
+            Debug.Log($"---- StartQRTracking ----");
         }
 
         public void StopQRTracking()
